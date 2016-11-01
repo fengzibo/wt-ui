@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="charset=UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../css/style-common.css">
+    <link rel="stylesheet" type="text/css" href="../css/style-index.css">
+    <!--[if lt IE 10]>
+    <script src="../js/xdomain.all.js" slave="cors-proxy.html"></script>
+    <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<figure class="g-minwidth">
+    <div class="u-loginBg g-width f-prel">
+        <img width="100%" height="100%" style="background-color: #fcfcfc">
+        <form role="form">
+            <div class="u-login">
+                <h2>登录</h2>
+                <div class="input-group">
+                    <span class="input-group-addon iconfont icon-user"></span>
+                    <input type="text" class="form-control" placeholder="手机号码/邮箱">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon iconfont icon-psw"></span>
+                    <input type="password" class="form-control" placeholder="密码">
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" id="j_acquire">获取</button>
+                    </span>
+                </div>
+                <div class="clearfix u-logFuc">
+                    <a class="f-fl">忘记密码?</a>
+                    <a class="f-fr">免费注册</a>
+                </div>
+                <button type="submit" class="btn btn-default u-loginSubm">登录</button>
+                <a class="u-logFuc f-db">第三方登录</a>
+            </div>
+        </form>
+    </div>
+
+</figure>
+<script src="../js/jquery1.11.3.min.js"></script>
+<scrpit src="../js/ajaxDataController.js"></scrpit>
+<script src="../js/common.js"></script>
+<script>
+    $(function () {
+        $("body").prepend(common.global.loginBar()).append(common.global.footer());
+        $("#j_acquire").on('click', function () {
+            var acq = $(this);
+            var count = 60;
+            acq.addClass('disabled');
+            acq.attr("disabled", "disabled");
+            countdown();
+            var acqtime = setInterval(countdown, 1000);
+
+            function countdown() {
+                acq.text(count + "秒后重新获取");
+                if (count == 0) {
+                    acq.removeClass('disabled');
+                    acq.removeAttr("disabled");
+                    acq.text('获取');
+                    clearInterval(acqtime);
+                }
+                ;
+                count--;
+            }
+        })
+
+    })
+</script>
+</body>
+</html>
