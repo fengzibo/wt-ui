@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Content-Type" content="charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Content-Type" content="charset=UTF-8"/>
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="../css/style-common.css">
     <link rel="stylesheet" type="text/css" href="../css/style-index.css">
@@ -15,12 +15,27 @@
     <![endif]-->
 </head>
 <body>
-<div class="g-container"></div>
+<div class="g-container">
+    <figure class="g-minwidth">
+        <form role="form">
+            <div class="m-login">
+                <div class="input-group g-wid1">
+                    <input type="password" class="form-control" placeholder="新密码">
+                </div>
+                <div class="input-group g-wid1">
+                    <input type="password" class="form-control" placeholder="确认密码">
+                </div>
+                <button type="submit" class="btn btn-default u-regSubm" >完成</button>
+            </div>
+        </form>
+    </figure>
+</div>
+
 <script src="../js/jquery1.11.3.min.js"></script>
 <scrpit src="../js/ajaxDataController.js"></scrpit>
 <script src="../js/common.js"></script>
 <script>
-    $(function(){
+    $(function () {
         $(".g-container").prepend(common.global.header());
         $("body").append(common.global.footer());
     })

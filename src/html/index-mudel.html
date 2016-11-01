@@ -15,13 +15,14 @@
     <![endif]-->
 </head>
 <body>
-
+<div class="g-container"></div>
 <script src="../js/jquery1.11.3.min.js"></script>
 <scrpit src="../js/ajaxDataController.js"></scrpit>
 <script src="../js/common.js"></script>
 <script>
     $(function(){
-        $("body").prepend(common.global.header()).append(common.global.footer());
+        $(".g-container").prepend(common.global.header());
+        $("body").append(common.global.footer());
     })
 </script>
 </body>

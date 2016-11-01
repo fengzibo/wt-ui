@@ -16,10 +16,10 @@
 </head>
 <body>
 
-<div class="g-container f-pad40">
-    <div class="g-width clearfix">
+<div class="g-container">
+    <div class="g-width clearfix f-pad40">
         <article class="f-fl u-lw">
-            <ul class="m-clist u-lw-mg">
+            <ul class="m-clist u-lw-mg" style="margin-right: 340px;">
                 <li class="clearfix">
                     <div class="f-fl m-clist-txt">参与微课投票、答题活动，为参赛教师赢取加分！</div>
                     <span class="f-fr m-clist-rtime">2015-12-30</span>
@@ -65,7 +65,8 @@
 <script src="../js/common.js"></script>
 <script>
     $(function(){
-        $("body").prepend(common.global.header()).append(common.global.footer());
+        $(".g-container").prepend(common.global.header());
+        $("body").append(common.global.footer());
         $("#Pagination").pagination('10', {
             items_per_page: 3,//每页显示行数
             num_edge_entries: 3,//省略号前后显示页数
